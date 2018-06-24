@@ -1,0 +1,148 @@
+display.cpp:	while (!M->maze_[tx][ty]) {
+display.cpp:	edge2 = M->maze_[c2x][c2y];	/* c2 */
+display.cpp:	edge3 = M->maze_[l1x][l1y];	/* l1 */
+display.cpp:	edge7 = M->maze_[r1x][r1y];	/* r1 */
+display.cpp:	edge1 = (edge3 && (edge2 || !M->maze_[l2x][l2y]))
+display.cpp:	edge5 = (edge7 && (edge2 || !M->maze_[r2x][r2y]))
+display.cpp:	Rat rat = M->rat(hisRatIndex);
+display.cpp:	if (M->peeking()) {
+display.cpp:		tx = M->xPeek();
+display.cpp:		ty = M->yPeek();
+display.cpp:		td = M->dirPeek();
+display.cpp:	while (!M->maze_[tx.value()][ty.value()]) {
+display.cpp:	myRat = M->rat(ratIndex);
+display.cpp:	M->ratIs(myRat, ratIndex);
+display.cpp:	Rat newRat = M->rat(ratIndex);
+display.cpp:	M->ratIs(newRat, ratIndex);
+display.cpp:	Rat leftRat = M->rat(ratIndex);
+display.cpp:	M->ratIs(leftRat, ratIndex);
+display.cpp:	Rat myRat = M->rat(MY_RAT_INDEX);
+display.cpp:		else if (M->rat(ratIndex).playing)
+display.cpp:			clearPosition(ratIndex, M->rat(ratIndex).x, M->rat(ratIndex).y);
+display.cpp:	rp = M->rat(MY_RAT_INDEX);
+display.cpp:	M->ratIs(rp, MY_RAT_INDEX);
+display.cpp:		rp = M->rat(i);
+display.cpp:	if (M->rat(ratIndex).playing)
+init.cpp:	printf("%d X LOC \n",M->xloc().value());
+init.cpp:				M->maze_[i][j] = TRUE;
+init.cpp:				M->maze_[i][j] = FALSE;
+init.cpp:  case NORTH:	return(!M->maze_[tx+1][ty]);
+init.cpp:  case SOUTH:	return(!M->maze_[tx-1][ty]);
+init.cpp:  case EAST:	return(!M->maze_[tx][ty+1]);
+init.cpp:  case WEST:	return(!M->maze_[tx][ty-1]);
+init.cpp:  case NORTH:	return(!M->maze_[tx][ty+1]);
+init.cpp:  case SOUTH:	return(!M->maze_[tx][ty-1]);
+init.cpp:  case WEST:	return(!M->maze_[tx+1][ty]);
+init.cpp:  case EAST:	return(!M->maze_[tx-1][ty]);
+init.cpp:  case NORTH:	return(!M->maze_[tx][ty-1]);
+init.cpp:  case SOUTH:	return(!M->maze_[tx][ty+1]);
+init.cpp:  case WEST:	return(!M->maze_[tx-1][ty]);
+init.cpp:  case EAST:	return(!M->maze_[tx+1][ty]);
+init.cpp:  case NORTH:	return(!M->maze_[tx-1][ty]);
+init.cpp:  case SOUTH:	return(!M->maze_[tx+1][ty]);
+init.cpp:  case EAST:	return(!M->maze_[tx][ty-1]);
+init.cpp:  case WEST:	return(!M->maze_[tx][ty+1]);
+mazewar.h:#define MY_DIR			M->dir().value()
+mazewar.h:#define MY_X_LOC		M->xloc().value()
+mazewar.h:#define MY_Y_LOC		M->yloc().value()
+Binary file protocol.pdf matches
+toplevel.cpp:    strncpy(M->myName_, ratName, NAMESIZE);
+toplevel.cpp:		if (M->maze_[x.value()][y.value()])
+toplevel.cpp:			M->xlocIs(x);
+toplevel.cpp:			M->ylocIs(y);
+toplevel.cpp:			M->dirIs(dir);
+toplevel.cpp:		NextEvent(&event, M->theSocket());
+toplevel.cpp:		if (!M->peeking())
+toplevel.cpp:	M->dirIs(_aboutFace[MY_DIR]);
+toplevel.cpp:	M->dirIs(_leftTurn[MY_DIR]);
+toplevel.cpp:	M->dirIs(_rightTurn[MY_DIR]);
+toplevel.cpp:	case NORTH:	if (!M->maze_[tx+1][ty])	tx++; break;
+toplevel.cpp:	case SOUTH:	if (!M->maze_[tx-1][ty])	tx--; break;
+toplevel.cpp:	case EAST:	if (!M->maze_[tx][ty+1])	ty++; break;
+toplevel.cpp:	case WEST:	if (!M->maze_[tx][ty-1])	ty--; break;
+toplevel.cpp:		M->xlocIs(Loc(tx));
+toplevel.cpp:		M->ylocIs(Loc(ty));
+toplevel.cpp:	case NORTH:	if (!M->maze_[tx-1][ty])	tx--; break;
+toplevel.cpp:	case SOUTH:	if (!M->maze_[tx+1][ty])	tx++; break;
+toplevel.cpp:	case EAST:	if (!M->maze_[tx][ty-1])	ty--; break;
+toplevel.cpp:	case WEST:	if (!M->maze_[tx][ty+1])	ty++; break;
+toplevel.cpp:		M->xlocIs(Loc(tx));
+toplevel.cpp:		M->ylocIs(Loc(ty));
+toplevel.cpp:	M->xPeekIs(MY_X_LOC);
+toplevel.cpp:	M->yPeekIs(MY_Y_LOC);
+toplevel.cpp:	M->dirPeekIs(MY_DIR);
+toplevel.cpp:	case NORTH:	if (!M->maze_[MY_X_LOC+1][MY_Y_LOC]) {
+toplevel.cpp:				M->xPeekIs(MY_X_LOC + 1);
+toplevel.cpp:				M->dirPeekIs(WEST);
+toplevel.cpp:	case SOUTH:	if (!M->maze_[MY_X_LOC-1][MY_Y_LOC]) {
+toplevel.cpp:				M->xPeekIs(MY_X_LOC - 1);
+toplevel.cpp:				M->dirPeekIs(EAST);
+toplevel.cpp:	case EAST:	if (!M->maze_[MY_X_LOC][MY_Y_LOC+1]) {
+toplevel.cpp:				M->yPeekIs(MY_Y_LOC + 1);
+toplevel.cpp:				M->dirPeekIs(NORTH);
+toplevel.cpp:	case WEST:	if (!M->maze_[MY_X_LOC][MY_Y_LOC-1]) {
+toplevel.cpp:				M->yPeekIs(MY_Y_LOC - 1);
+toplevel.cpp:				M->dirPeekIs(SOUTH);
+toplevel.cpp:	if ((M->xPeek() != MY_X_LOC) || (M->yPeek() != MY_Y_LOC)) {
+toplevel.cpp:		M->peekingIs(TRUE);
+toplevel.cpp:	M->xPeekIs(MY_X_LOC);
+toplevel.cpp:	M->yPeekIs(MY_Y_LOC);
+toplevel.cpp:	M->dirPeekIs(MY_DIR);
+toplevel.cpp:	case NORTH:	if (!M->maze_[MY_X_LOC+1][MY_Y_LOC]) {
+toplevel.cpp:				M->xPeekIs(MY_X_LOC + 1);
+toplevel.cpp:				M->dirPeekIs(EAST);
+toplevel.cpp:	case SOUTH:	if (!M->maze_[MY_X_LOC-1][MY_Y_LOC]) {
+toplevel.cpp:				M->xPeekIs(MY_X_LOC - 1);
+toplevel.cpp:				M->dirPeekIs(WEST);
+toplevel.cpp:	case EAST:	if (!M->maze_[MY_X_LOC][MY_Y_LOC+1]) {
+toplevel.cpp:				M->yPeekIs(MY_Y_LOC + 1);
+toplevel.cpp:				M->dirPeekIs(SOUTH);
+toplevel.cpp:	case WEST:	if (!M->maze_[MY_X_LOC][MY_Y_LOC-1]) {
+toplevel.cpp:				M->yPeekIs(MY_Y_LOC - 1);
+toplevel.cpp:				M->dirPeekIs(NORTH);
+toplevel.cpp:	if ((M->xPeek() != MY_X_LOC) || (M->yPeek() != MY_Y_LOC)) {
+toplevel.cpp:		M->peekingIs(TRUE);
+toplevel.cpp:	M->peekingIs(FALSE);
+toplevel.cpp:	M->scoreIs( M->score().value()-1 );
+toplevel.cpp:	UpdateScoreCard(M->myRatId().value());
+toplevel.cpp:	while (M->maze_[newX.value()][newY.value()]) {
+toplevel.cpp:		if (M->peeking())
+toplevel.cpp:			ShowView(M->xPeek(), M->yPeek(), M->dirPeek());
+toplevel.cpp:	if (ratId.value() == M->myRatId().value())
+toplevel.cpp:		{ return(M->score()); }
+toplevel.cpp:	if (ratId.value() == M->myRatId().value())
+toplevel.cpp:		return(M->myName_);
+toplevel.cpp:		if (M->maze_[missiles[i].x->value()][missiles[i].y->value()]){
+toplevel.cpp:	pkt->score = M->score().value();
+toplevel.cpp:	if (sendto((int)M->theSocket(), &pack, sizeof(pack), 0, (struct sockaddr *) &groupAddr, sizeof(Sockaddr)) < 0)
+toplevel.cpp:	if (sendto((int)M->theSocket(), &pack, sizeof(pack), 0, (struct sockaddr *) &groupAddr, sizeof(Sockaddr)) < 0)
+toplevel.cpp:        if (sendto((int)M->theSocket(), &pack, sizeof(pack), 0, (struct sockaddr *) &groupAddr, sizeof(Sockaddr)) < 0)
+toplevel.cpp:        if (sendto((int)M->theSocket(), &pack, sizeof(pack), 0, (struct sockaddr *) &groupAddr, sizeof(Sockaddr)) < 0)
+toplevel.cpp:        if (sendto((int)M->theSocket(), &pack, sizeof(pack), 0, (struct sockaddr *) &groupAddr, sizeof(Sockaddr)) < 0)
+toplevel.cpp:        if (sendto((int)M->theSocket(), &pack, sizeof(pack), 0, (struct sockaddr *) &groupAddr, sizeof(Sockaddr)) < 0)
+toplevel.cpp:		M->scoreIs( M->score().value()-5 );
+toplevel.cpp:				M->scoreIs( M->score().value()+11 );
+toplevel.cpp:	if(M->maze_[x][y])
+toplevel.cpp:			case 0:     if (!M->maze_[tx+1][ty])        {tx++; goto outRand;} else break;
+toplevel.cpp:			case 1:     if (!M->maze_[tx-1][ty])        {tx--; goto outRand;} else break;
+toplevel.cpp:			case 2:     if (!M->maze_[tx][ty+1])        {ty++; goto outRand;} else break;
+toplevel.cpp:			case 3:     if (!M->maze_[tx][ty-1])        {ty--; goto outRand;} else break;
+toplevel.cpp:        M->xlocIs(Loc(tx));
+toplevel.cpp:        M->ylocIs(Loc(ty));
+toplevel.cpp:	M->mazePortIs(htons(MAZEPORT));
+toplevel.cpp:	bcopy((caddr_t) thisHost, (caddr_t) (M->myAddr()), sizeof(Sockaddr));
+toplevel.cpp:	M->theSocketIs(socket(AF_INET, SOCK_DGRAM, 0));
+toplevel.cpp:	if (M->theSocket() < 0)
+toplevel.cpp:	if (setsockopt(M->theSocket(), SOL_SOCKET, SO_REUSEADDR, &reuse,
+toplevel.cpp:	nullAddr.sin_port = M->mazePort();
+toplevel.cpp:	if (bind(M->theSocket(), (struct sockaddr *)&nullAddr,
+toplevel.cpp:	if (setsockopt(M->theSocket(), IPPROTO_IP, IP_MULTICAST_TTL, &ttl,
+toplevel.cpp:	if (setsockopt(M->theSocket(), IPPROTO_IP, IP_ADD_MEMBERSHIP, (char *)
+toplevel.cpp:	M->myRatIdIs(0);
+toplevel.cpp:	M->scoreIs(0);
+winsys.cpp:  if ((choice == 0) || M->peeking()) {
+winsys.cpp:    M->dirIs( Direction(-TheNextEvent));
+winsys.cpp:  else if ((M->peeking()) && (visible == TRUE))
+winsys.cpp:      TheNextEvent = M->dirPeek().value();
+winsys.cpp:  else if ((M->peeking()) && (choice != 2))
+winsys.cpp:				if (M->maze_[j][i])

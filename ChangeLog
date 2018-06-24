@@ -1,0 +1,52 @@
+ChangeLog (Team KSR)
+
+  Hong Zhang (romanzhg@stanford.edu)
+  Kyuhwan Dhong (kyuhwan@stanford.edu)
+  Lei Sun (sunlei@stanford.edu)
+
+================================================================================
+
+1. Removed rat movement delay.
+
+ - Initially, rats also had a finite speed. However, TA suggested to remove
+ this delay.
+
+2. Moved GUID field in the packet header.
+ - We decided to move the GUID field in the packet header 8 bits to the right.
+ This is to make every field align with the memory boundary.
+
+ Initially, we were thinking of using #pragma pack. But, after some research
+ it seemed that this has compatibility issues and not recommended. Although
+ there is a work around to accomplish this, we decided to match the alignment
+ to make coding easier.
+
+3. Packet sequence number starts from 1.
+ - A minor fix to avoid initial guid conflicts.
+
+4. Username length to 24 characters from 12.
+ - We initially set the max length to 12. This was because we didn't notice
+ the value in the source code and 12 bytes was the maximum payload size. TA
+ mentioned that it is better to guarantee 20 characters, so we increased it to
+ 24.
+
+5. Tag Key is a incremental sequence number starting from 1 instead of a
+random number.
+ - This was actually something already decided but slipped through our final
+ review. Since random has a possibility to conflict and tag key just needs to
+ be unique after each re-spawn, sequencial number is much easier to use.
+
+6. Also use packet sequence number to detect GUID collision.
+ - Initially, we didn't know that UDP multicast packets loopbacks. Since we
+ need to run multiple instances in the same machine, turning off the loopback
+ wasn't our option. So, we slightly improved our detection method. Not only
+ looking for the same GUID, we also track the latest packet sequence number
+ from loopbacks and if we receive a number that is same or less than the
+ latest one, we consider this as a GUID collision.
+
+7. USERNAME-REQUEST-ACK sending window is 500 milliseconds.
+ - There is a typo in the initial document. One part says it's 1 second and
+ the other says it's 500ms. 500ms is the value we want.
+
+8. Tagged packets are saved up to 5 per opponent player.
+ - We initially set this to 3 but increased to 5 because this number had a
+ better explanation. It is added in the Rationale section.
